@@ -2,7 +2,7 @@
 
 **Instructions: ** Define each of the following Git concepts.
 
-* What is version control?  Why is it useful?
+* What is version control to you sir?  Why is it useful?
 
 -- Version control is the ability to make changes to a file or series of files remotely. It is useful because the changes are non-destructive and you can revert to an older file before changes were made if neccessary. 
 
