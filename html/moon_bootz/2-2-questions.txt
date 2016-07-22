@@ -1,0 +1,19 @@
+What is a block-level element? What are some examples of block-level elements? What are they used for?
+Block-level element occupies the entire space of its parent element (container), thereby creating a block
+<div>
+<h1> - <h6>
+<p>
+<form>
+use to create box like feature
+
+div/section in a form!
+
+what is an inline element?
+an inline element does not start on a new line and only takes up as much wideth as necessary
+<span>
+<a>
+<img>
+
+
+do inline elements usually nest inside block-level elements, or is it typically the other way around?
+wrong to put a block element inside and inline element
