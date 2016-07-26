@@ -1,0 +1,47 @@
+#contact-info {
+	font-size: .8em;
+
+
+}
+
+.job {
+	background-color: #e9e5dc;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.ullist{
+	font-size: .8em;
+
+}
+
+
+#personal-objective h2:first-child{
+	background-color: yellow;
+
+
+}
+
+.job:hover{
+	font-size: 2em;
+	color: #332901;
+
+}
+
+li:first-child {
+	background-color: yellow;
+	font-weight: bold;
+
+}
+
+li:nth-child(2n + 1):hover{
+	background-color: blue;
+	font-size: .5em;
+
+
+}
+
+
+
+
