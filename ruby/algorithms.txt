@@ -1,0 +1,44 @@
+Elevator Calling robot - 
+
+Go to Elevator doors
+
+	Call Resdan, attempt three times:
+	 -If Resdan picks up
+		Ask which floor to go to 
+		go into elevator
+		press button equal to floor that Resdan said
+		enjoy ride or down elevator 
+	 -If Resdan does not pick up
+	 	wait 5 seconds
+	 	try again
+	If no response 
+		- Do not use elevator
+
+
+
+Resdan's routine
+
+- Wake up 
+
+- get out of bed
+
+- put on clothes 
+
+- go into kitchen
+
+- open fridge 
+
+- If there is Milk
+	- Check if there is oatmeal
+		- Make oatmeal with milk
+	else 
+	- Check if there is cereal
+		- Make cereal with milk
+
+  else if there is Eggs
+	- Check if there is bacon
+		- Make bacon and eggs
+
+  else 
+
+        - Cry and starve because Resdan does not know how to make anything else 
