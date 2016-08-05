@@ -1,5 +1,16 @@
 def survey 
-result = "Results inconclusive"
+
+
+puts "How many employees are being processed?"
+number = gets.chomp
+number = number.to_i
+i = 1
+if number == 0
+	puts "No employees being processed today"
+else
+
+while i <= number 
+puts "Employee # #{i}"
 puts "What is your name?"
 name = gets.chomp
 
@@ -48,8 +59,10 @@ if age <= 100 && (2016 - year == age) && bread == "yes" && insurance == "no" && 
    	
 
 	 end
-    print "#{result}"
-    
+    print "#{result}  \n \n"
+    i += 1
+  end
+  end
 end
 
 survey()
