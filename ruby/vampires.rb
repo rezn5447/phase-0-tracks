@@ -1,5 +1,5 @@
 def survey 
-
+result = "Results inconclusive"
 puts "What is your name?"
 name = gets.chomp
 
@@ -28,36 +28,27 @@ puts "Would you like to enroll in the company's health insurance? (yes or no)"
 	insurance = gets.chomp 
 	end
 
-	 if age < 100 && (2016 - year = age || 2015 - year = age)
 
-		if bread == "yes" && (name != "Drake Cula" || name != "Tu Fang")
+	 
+if age <= 100 && (2016 - year == age) && bread == "yes" && insurance == "no" && name != "Drake Cula" && name != "Tu Fang"
 			
-		result = "Probably not a vampire";
+		result = "Probably not a vampire"
 	
-		end
 	
 		
+	elsif (age >= 100 || (2016 - year != age)) && (bread == "no" || insurance == "no")
 		
-	elsif age > 100 || (2016 - year != age || 2015 - year != age )
-
-	 	if bread == "no" || insurance == "no"
 		result = "Probably a vampire"
 
-		end
-	
-	elsif age < 100 && (2016 - year = age || 2015 - year = age)
-	
-		if bread == "yes" && insurance == "yes"
-			if name == "Drake Cula" || name == "Tu Fang"
-	
-		result = "Clearly a vampire"
-		end
-	end
-
+	elsif (age <= 100) && (2016 - year == age) && (bread == "yes") && (insurance == "yes") && (name == "Drake Cula" || name == "Tu Fang")
+			result = "Definitely a vampire"
+		
     else
-    	result = "Results are inconclusive"
-    end
-    puts "#{result}"
+    	   result = "Results are inconclusive"
+   	
+
+	 end
+    print "#{result}"
     
 end
 
