@@ -1,5 +1,18 @@
 def survey 
-result = "Results inconclusive"
+
+allergies = ""
+
+
+puts "How many employees are being processed?"
+number = gets.chomp
+number = number.to_i
+i = 1
+if number == 0
+	puts "No employees being processed today"
+else
+
+while i <= number 
+puts "Employee # #{i}"
 puts "What is your name?"
 name = gets.chomp
 
@@ -29,6 +42,12 @@ puts "Would you like to enroll in the company's health insurance? (yes or no)"
 	end
 
 
+puts "Can you please type any allergies you have (type 'done' to continue)"
+
+ until allergies == "done" || allergies == "sunshine"
+ 	allergies = gets.chomp
+ 	
+end
 	 
 if age <= 100 && (2016 - year == age) && bread == "yes" && insurance == "no" && name != "Drake Cula" && name != "Tu Fang"
 			
@@ -36,7 +55,7 @@ if age <= 100 && (2016 - year == age) && bread == "yes" && insurance == "no" && 
 	
 	
 		
-	elsif (age >= 100 || (2016 - year != age)) && (bread == "no" || insurance == "no")
+	elsif allergies == "sunshine" || (age >= 100 || (2016 - year != age)) && (bread == "no" || insurance == "no")
 		
 		result = "Probably a vampire"
 
@@ -48,8 +67,10 @@ if age <= 100 && (2016 - year == age) && bread == "yes" && insurance == "no" && 
    	
 
 	 end
-    print "#{result}"
-    
+    print "#{result}  \n \n"
+    i += 1
+  end
+  end
 end
 
 survey()
