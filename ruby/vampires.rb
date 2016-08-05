@@ -70,11 +70,11 @@ if age <= 100 && (2016 - year == age) && bread == "yes" && insurance == "no" && 
 
 	 end
 
-    print "#{result}  \n \n"
+    puts "#{result}  \n \n"
     i += 1
   end
   end
-
+    puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
 
 survey()
