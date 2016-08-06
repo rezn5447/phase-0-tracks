@@ -14,7 +14,21 @@ def encrypt(string)
 	end
 
 	puts encryptstr
-	end 
+	end        
+
+$alpha = "abcdefghijklmnopqrstuvxyz"    
+
+def decrypt(string)
+	i =  0
+
+	decryptstr = ""
+
+while i < string.length
+	code = $alpha.index(string[i])
+	newletter = $alpha[code - 1]
+		i += 1
+	decryptstr += newletter
 	
-	encrypt("abc")
-	encrypt("tyw")
+	end
+puts decryptstr
+end
