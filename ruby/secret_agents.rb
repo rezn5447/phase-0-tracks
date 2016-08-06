@@ -1,3 +1,22 @@
+## Pseudocode for encrypting ##
+
+# - Take a string of letters
+# - write a loop that separates out each letter, and advances that letter one letter forward
+# - concatenate the letter to a new string
+# - output the string
+
+## Pseudocode for decrypting ##
+
+# - Take a string of letters
+# - write a loop that separates out each letter
+# - Find a way to check that letter to the aplhabet string
+# - Once aplhabet string is matched to letter, use aplhabet string to move one letter backward
+# - concatenate the letter to a new string
+# - output the string
+
+
+
+
 # Method Declarations
 
 def encrypt(string)
