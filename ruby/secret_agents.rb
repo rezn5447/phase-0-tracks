@@ -1,3 +1,5 @@
+# Method Declarations
+
 def encrypt(string)
 	
 	index = 0
@@ -16,7 +18,7 @@ def encrypt(string)
 	puts encryptstr
 	end        
 
-$alpha = "abcdefghijklmnopqrstuvxyz"    
+$alpha = "abcdefghijklmnopqrstuvwxyz"    
 
 def decrypt(string)
 	i =  0
@@ -31,4 +33,24 @@ while i < string.length
 	
 	end
 puts decryptstr
+end
+
+## decrypt(encrypt("swordfish"))  ## 
+
+## decrypts the encryption of swordfish ##
+## moves each letter forward one, then moves it back one ##
+
+# Driver Code
+
+puts "Do you want to Encrypt or Decrypt Code?(e/d)"
+decision = gets.chomp
+
+puts "Input Code here"
+password = gets.chomp
+	if decision == "e"
+	encrypt(password)
+	elsif decision == "d"
+	decrypt(password)
+else
+	puts "Something went wrong your password is broken"
 end
