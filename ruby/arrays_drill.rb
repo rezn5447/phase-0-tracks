@@ -1,3 +1,28 @@
+# => At the top of your file, add a method that takes three items as parameters and returns an array of those items. So build_array(1, "two", nil) would return [1, "two", nil]. This won't take much code, but the syntax might feel a bit odd. At the bottom of the file, call the method to show that it works.
+
+def topmethod(arg1,arg2,agr3)
+
+array = [arg1,arg2,arg3]
+
+end
+
+
+
+# => At the top of your file, add a method that takes an array and an item as parameters, and returns the array with the item added. So add_to_array([], "a") would return ["a"], and add_to_array(["a", "b", "c", 1, 2], 3) would return ["a", "b", "c", 1, 2, 3]. Print a few test calls of the method.
+
+def add_to_array(array, arg)
+
+added_array = array
+
+added_array << arg
+
+end
+
+
+
+
+
+
 # In phase-0-tracks/ruby/arrays_drill.rb, 
 # demonstrate that you can do the following steps, in order. 
 # You'll need to use the Array docs to figure out how to accomplish each one, just as you used the String docs to manipulate strings.
@@ -53,4 +78,13 @@ huge_array = drill_array + array2
 
 
 
+p topmethod("humble", "function", 5)
+
+p add_to_array(["a","b",3,5],'function')
+
+p add_to_array(['Google','dog','mouse'], 3)
+
+p add_to_array(['Jump',"human","horse"], "Happy")
+
+p add_to_array(['Google','dog','mouse'], 3)
 
