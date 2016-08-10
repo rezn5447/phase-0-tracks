@@ -1,25 +1,4 @@
 
-# => In phase-0-tracks/ruby/hashes.rb, pseudocode and write a program that will allow an interior designer to enter the details of a given client: the client's name, age, number of children, decor theme, and so on (you can choose your own as long as it's a good mix of string, integer, and boolean data).
-
-# => Your keys should be symbols unless you find that you need a string for some reason -- usually only when spaces or other "user friendly" formatting are needed (as in the case of using someone's full name as a hash key). Basically, symbols are simpler for programmers to use, and readable enough by technical folks to be used in place of strings most of the time.
-
-## Your program should ...
-
-# => Prompt the designer/user for all of this information.
-
-
-# => convert any user input to the appropriate data type.
-
-# => Print the hash back out to the screen when the designer has answered all of the questions.
-
-
-
-# => Give the user the opportunity to update a key (no need to loop, once is fine). After all, sometimes users make mistakes! If the designer says "none", skip it. But if the designer enters "decor_theme" (for example), your program should ask for a new value and update the :decor_theme key. (Hint: Strings have methods that will turn them into symbols, which would be quite handy here.) You can assume the user will correctly input a key that exists in your hash -- no need to handle user errors.
-# => Print the latest version of the hash, and exit the program.
-
-
-
-
 client_info = {
 	
 	
@@ -33,45 +12,145 @@ client_info[:name] = name
 
 puts "What is your age?"
 age = gets.chomp
-client_info[:age] = age
+client_info[:age] = age.to_i
 
 puts "How many children do you have?"
 kids = gets.chomp
 client_info[:kids] = kids.to_i
 
 puts "Is your favorite decor theme baige? (yes / no)"
-theme = gets.chomp
-if theme == "yes"
-	theme = TRUE
+baige = gets.chomp
+if baige == "yes"
 	
-	client_info[:theme] = theme
+	client_info[:baige] = TRUE
 	
-elsif theme == "no"
-	theme = FALSE
-	client_info[:theme] = theme
-else
-	theme = "Not specified"
-	client_info[:theme] = theme
-end
-p "Here is the info that you entered:"
-p client_info
-p "\n \n"
+elsif baige == "no"
 
-p "Would you like tp update any values?( yes / no )"
+	client_info[:baige] = FALSE
+
+else
+
+	client_info[:baige] = "Not Specified"
+end
+
+puts "Is your favorite decor theme purple? (yes / no)"
+purple = gets.chomp
+if purple == "yes"
+	
+	client_info[:purple] = TRUE
+	
+elsif purple == "no"
+
+	client_info[:purple] = FALSE
+
+else
+
+	client_info[:purple] = "Not Specified"
+end
+
+
+puts "Are you obsessed with feng shui? (yes / no)"
+feng = gets.chomp
+if feng == "yes"
+	
+	client_info[:feng] = TRUE
+	
+elsif feng == "no"
+
+	client_info[:feng] = FALSE
+
+else
+
+	client_info[:feng] = "Not Specified"
+end
+
+puts " \n Here is the info that you entered: \n"
+
+
+p client_info
+
+
+puts " \n Would you like to update any values?( yes / no )"
 ans = gets.chomp
 if ans == "no"
-	p "Thank you for entering everything correctly! Heres your info again:"
+	puts "Thank you for entering everything correctly! Heres your info again: \n"
 	p client_info
 else
 	puts "What would you like to change? (enter the key or use 'done' to quit)"
-	change = gets.chomp.to_sym
+	change = gets.chomp
+	changed = change.to_sym
 	
-	if change == [:age] || change = [:kids]
-		p "Enter a new number for #{change}"
+	if change == "done"
 		
-		elsif change = []
+		puts "\n Thank you for entering everything correctly! Heres your info again: \n"
+		p client_info
+
+	elsif changed == :name
+		p "Please enter new value for Client name:"
+		value = gets.chomp
+		client_info[changed] = value
+		
+			p "Great! Here is all your info again in cased you missed it.\n"
+	
+		p client_info
+		
+		
+	elsif changed == :age || changed == :kids
+		p "Enter a new number for #{change}"
+		value = gets.chomp
+		client_info[changed] = value
+	
+		puts "Great! Here is all your info again in cased you missed it.\n"
+	
+		p client_info
+	
+
+	elsif changed == :purple
+	
+		p "Oh so you changed your mind about purple. Do you love it now? (yes / no)"
+		purple = gets.chomp
+
+		if purple == "yes"
+			client_info[changed] = TRUE
+		else 
+			client_info[changed] = FALSE
+		end
+			puts "Great! Here is all your info again in cased you missed it. \n"
+	
+			p client_info
+
+	elsif changed == :baige
+	
+		p "Oh so you changed your mind about baige. Do you love it now? (yes / no)"
+		baige = gets.chomp
+
+		if baige == "yes"
+			client_info[changed] = TRUE
+		else 
+			client_info[changed] = FALSE
+		end
+		
+			puts "Great! Here is all your info again in cased you missed it. \n"
+	
+			p client_info
+
+	elsif changed == :feng
+	
+		p "Oh so you changed your mind about feng shui. Are you Obsessed now? (yes / no)"
+		feng = gets.chomp
+
+		if feng == "yes"
+			client_info[changed] = TRUE
+		else 
+			client_info[changed] = FALSE
+		end
+		
+			puts "Great! Here is all your info again in cased you missed it. \n"
+	
+			p client_info
+
 	
 	
-
-
-
+	end # end of change statements
+end # end of change prompt
+	
