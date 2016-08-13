@@ -17,9 +17,37 @@
 
 # => Then combine the array back into a full name. I'm thinking something like 'alias_name = (changed[0] + changed[1])'
 
-# => Then p alias_name to 
+# => Then p alias_name to console
 
 ## END PSEUDOCODE ##
+def vowel_mix(letters)
+	vowels = "aeiou"
+
+letters.each do |letter|
+	if letter != 'a' && letter != 'e' && letter != 'i' && letter != 'o' && letter != 'u'
+		letter.next!
+		p letter
+	else
+		p letter
+	end
+
+end	
+end
+
+
+def alias_start(name)
+	
+# Splitting name and reversing name placements
+spl_name = name.split(' ').reverse!
+
+
+ali_fname = spl_name[0].chars
+ali_lname = spl_name[1].chars
+vowel_mix(spl_name[0].chars)
+
+end
+
+alias_start("Felicia Torres")
 
 
 
