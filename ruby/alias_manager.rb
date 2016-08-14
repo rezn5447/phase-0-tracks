@@ -22,20 +22,38 @@
 ## END PSEUDOCODE ##
 def vowel_mix(letters)
 	vowels = "aeiou"
-
+	ali_name = ""
 letters.each do |letter|
-	if letter != 'a' && letter != 'e' && letter != 'i' && letter != 'o' && letter != 'u'
-		letter.next!
-		p letter
-	else
-		p letter
+	
+	# CATCH THOSE UPPERCASE LETTERS!
+letter.downcase!
+
+	# TO CATCH VOWELS	
+	if vowels.index(letter) != nil
+			if letter == 'u'
+				
+				ali_name = ali_name + 'a'
+			else
+				
+				ali_name = ali_name + vowels[vowels.index(letter) + 1]
+			 end
+		  
+# TO SKIP A VOWEL IF consonant.NEXT IS A VOWEL
+	elsif vowels.index(letter.next) != nil
+		
+		ali_name = ali_name + vowels[vowels.index(letter.next)].next
+# ELSE FOR consonant.NEXT THAT IS NOT A VOWEL 
+	else 
+		ali_name = ali_name + letter.next
 	end
 
-end	
-end
+  end	
+  
+   p ali_name.capitalize!
+end # END METHOD
 
 
-def alias_start(name)
+def alias_name(name)
 	
 # Splitting name and reversing name placements
 spl_name = name.split(' ').reverse!
@@ -43,14 +61,13 @@ spl_name = name.split(' ').reverse!
 
 ali_fname = spl_name[0].chars
 ali_lname = spl_name[1].chars
-vowel_mix(spl_name[0].chars)
+
+vowel_mix(ali_fname)
+vowel_mix(ali_lname)
 
 end
 
-alias_start("Felicia Torres")
-
-
-
+alias_name("Felicia Torres")
 
 # => This is the most complex algorithm you've had to write, and the toughest release of this challenge. How will you break it down into manageable pieces? Try to identify all of the mini-challenges and considerations that show up in your algorithm, such as
 
