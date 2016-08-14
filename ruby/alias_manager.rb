@@ -20,6 +20,10 @@
 # => Then p alias_name to console
 
 ## END PSEUDOCODE ##
+
+## DATABASE TO STORE NAMES ##
+$database = []
+
 def vowel_mix(letters)
 	vowels = "aeiou"
 	ali_name = ""
@@ -42,19 +46,27 @@ letter.downcase!
 	elsif vowels.index(letter.next) != nil
 		
 		ali_name = ali_name + vowels[vowels.index(letter.next)].next
+
+
 # ELSE FOR consonant.NEXT THAT IS NOT A VOWEL 
 	else 
 		ali_name = ali_name + letter.next
-	end
+	
+	end # END IF STATEMENTS
 
-  end	
-  
-   p ali_name.capitalize!
+  end # END .EACH TO LETTER	
+
+  ali_name.capitalize!
+
 end # END METHOD
 
 
 def alias_name(name)
 	
+	if name == "quit"
+		exit!
+	else
+
 # Splitting name and reversing name placements
 spl_name = name.split(' ').reverse!
 
@@ -65,10 +77,23 @@ ali_lname = spl_name[1].chars
 vowel_mix(ali_fname)
 vowel_mix(ali_lname)
 
+# Entering alias into database
+$database << "#{name} will now be known as #{vowel_mix(ali_fname)} #{vowel_mix(ali_lname)}"
 end
 
-alias_name("Felicia Torres")
+p "Alias Name Generator: Input Names and type 'quit' to generate aliases"
+input = gets.chomp
 
+until input == "quit"
+p "Next Name please: "
+input = gets.chomp
+alias_name(input)
+
+end
+
+
+puts "\n All Names Entered"
+p $database
 # => This is the most complex algorithm you've had to write, and the toughest release of this challenge. How will you break it down into manageable pieces? Try to identify all of the mini-challenges and considerations that show up in your algorithm, such as
 
 # => When will it be helpful to convert the string to an array to work with it more easily?
