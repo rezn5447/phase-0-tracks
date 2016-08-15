@@ -1,11 +1,20 @@
+## SPECIES ##
+
+# Canine
+
+
 ### CHARACTERISTICS OF A PUPPY ###
 
-# LEGS
+# LEGS: 4 
+# FRIENDLY: yes
+# COLOR: Varies
+# EYE COLOR: Varies
+# SIZE: Varies
+# TEMPER: Varies
 
-# COLOR
+## BEHAVIOR ##
 
-# EYE COLOR
-
-# SIZE
-
-# TEMPER
+# Jump
+# Run
+# Bark
+# Bite
