@@ -1,8 +1,12 @@
 class Santa 
-	
-	def initialize(name, saying)
-		@name = name
-		@saying = saying
+	@@cookies = 5
+	def initialize(gender,ethnicity)
+		
+		@gender = gender
+		@ethnicity = ethnicity
+		@cookies = 5
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0
 		puts "initializing Santa Instance ... \n"
 
 	end
@@ -15,20 +19,23 @@ class Santa
 
 
 	def eat_milk_and_cookies(cookie)
+		if @cookies != 0
 		puts "That was a good #{cookie} cookie!"
-
+		@cookies -= 1
+	else
+		p "THERE ARE NO MORE COOKIES YOU ATE THEM ALL!!!!"
+		end
 	end
 
-
+	
 
 end
 
-
-Santa001 = Santa.new("BoB", "Yippie, Kai Yay!")
-Santa001.speak
-Santa001.eat_milk_and_cookies("Snickerdoodle")
-
-
-Santa1 = Santa.new("Richard", "Bombs Away!!!")
-Santa1.speak
-Santa1.eat_milk_and_cookies("Gingerbread")
+santas = []
+santas << Santa.new("agender", "black")
+santas << Santa.new("female", "Latino")
+santas << Santa.new("bigender", "white")
+santas << Santa.new("male", "Japanese")
+santas << Santa.new("female", "prefer not to say")
+santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+santas << Santa.new("N/A", "N/A")
