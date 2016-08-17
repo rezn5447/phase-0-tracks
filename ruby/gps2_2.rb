@@ -94,3 +94,32 @@ def print_list(list)
 end
 
 print_list($grocery_list)
+
+
+# => On your own, add a commented reflection section to your gps2_2.rb file. Answer the following questions in your reflection:
+
+# => What did you learn about pseudocode from working on this challenge?
+### Pseudocode is extremely helpful in getting people on the same page and 
+### making methods easier
+
+
+# => What are the tradeoffs of using arrays and hashes for this challenge?
+### Arrays are easier with single items and hashes work better when updating and changing  
+### values like an interger value of an item
+
+
+# => What does a method return?
+### A method usually returns the value produced by the method. 
+
+# => What kind of things can you pass into methods as arguments?
+### Strings, arrays, integers, hashes, even other methods.
+
+# => How can you pass information between methods?
+### My personal preference is using a global variable because it is easier to keep track of 
+### but another way can be to pass the return value from one method to another 
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+### Global variables and defining several methods were solidified, but I think I could 
+### Work on passing return values between methods and mastering manipulating hashes
+### And their values
+
