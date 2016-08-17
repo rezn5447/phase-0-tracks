@@ -1,8 +1,15 @@
+$example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "Asexual", "too religious to answer", "Xenu", "N/A"]
+
+
+
+$example_ethnicities = ["black", "Latino", "white", "Japanese-African", "Alien", "Multi", "Canadian" "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
 class Santa 
-	attr_reader :age, :ethnicity
-	attr_accessor :gender, :cookies
+	attr_reader  :ethnicity
+	attr_accessor :gender, :cookies, :age, :reindeer_ranking
 	attr_writer :gender
 	@@cookies = 5
+	
 	def initialize(gender,ethnicity)
 		
 		@gender = gender
@@ -63,6 +70,22 @@ class Santa
 	end
 end
 
+def santa_builder(max_santa = 1)
+	santas = 0 
+	
+	while santas < max_santa
+	santa = Santa.new($example_genders.sample, $example_ethnicities.sample)
+	
+	santas += 1
+	santa.age = rand(0..140)
+	p santa.age
+	p santa.gender
+	p santa.reindeer_ranking
+	p santa.ethnicity
+	end
+	
+end
+
 # santas = []
 # santas << Santa.new("agender", "black")
 # santas << Santa.new("female", "Latino")
@@ -78,5 +101,23 @@ sally_pants.celebrate_birthday
 sally_pants.get_mad_at("Prancer")
 sally_pants.gender = "nachos"
 sally_pants.cookies = 7
+sally_pants
+
+santa_builder(5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
