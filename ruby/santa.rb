@@ -1,4 +1,7 @@
 class Santa 
+	attr_reader :age, :ethnicity
+	attr_accessor :gender, :cookies
+	attr_writer :gender
 	@@cookies = 5
 	def initialize(gender,ethnicity)
 		
@@ -41,12 +44,15 @@ class Santa
 	p @reindeer_ranking
 	end
 	
-	def set_gender(gend)
-	@gender = gend
-	p "You now identify as #{@gender}"
-	end
+	# def set_gender(gend)
+	# @gender = gend
+	# p "You now identify as #{@gender}"
+	# end
 	
 ## TWO GETTER METHODS ##
+
+
+
 	def age
 		@age
 	end
@@ -70,6 +76,7 @@ sally_pants = Santa.new("gender fluid", "Unicorn")
 
 sally_pants.celebrate_birthday
 sally_pants.get_mad_at("Prancer")
-sally_pants.set_gender("pants.")
+sally_pants.gender = "nachos"
+sally_pants.cookies = 7
 
 
