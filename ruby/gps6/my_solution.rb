@@ -20,8 +20,8 @@ class VirusPredictor
 ## THIS METHOD IS USING INSTANCE VARIABLES TO PREDICT HOW MANY PEOPLE WOULD DIE, AND HOW FAST. THE OUTPUT WOULD BE THE SPEED OF SPREAD BECAUSE IT IS THE LAST LINE OF THE METHOD.
 
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
 ## PRIVATE METHODS SO NOTHING OUTSIDE OF THE CLASS CAN ACCESS THEM ##
@@ -29,7 +29,7 @@ class VirusPredictor
 
 ## THIS METHOD PREDICTS THE AMOUNT OF DEATHS IN A STATE BASED ON POP. DENSITY. IT USES IF / ELSIF / ELSE STATEMENT WITH POP. DENSITY TO MULTIPLY POPULATION BY A DECIMAL. THEN USES .FLOOR TO ROUND TO NEAREST WHOLE PERSON ##
 
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -49,7 +49,8 @@ class VirusPredictor
 
 ## THIS METHOD PREDICTS THE SPEED OF SPREAD AGAIN USING POP. DENSITY. IT SETS SPEED TO 0.0. AND THEN SETS SPEED TO A VALUE BASED ON POP. DENSITY. USES IF/ ELSIF / ELSE STATEMENT WITH POP. DENSITY TO SET SPEED. THE OUTPUT IS A PUTS STATEMENT THAT INCLUDES THE ASSIGNED VALUE FOR SPEED. SPEED IS IN MONTHS. TWO LINES SEPARATED AFTER SENTENCE ##
 
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread 
+    #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
