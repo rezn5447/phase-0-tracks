@@ -23,3 +23,16 @@ function reverse(str){
 revStr = reverse("hello Yo Mamma")
 revStr2 = reverse("Hey Whats Up Hello")
 
+
+
+
+if (1 == 1){
+
+	console.log(revStr)
+
+} else {
+
+	console.log(revStr2)
+	
+}
+
