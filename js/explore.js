@@ -12,4 +12,14 @@
 
 
 
+function reverse(str){
+  newReverse = ''
+  for(i = str.length-1; i >= 0; i--){
+    newReverse = newReverse + str[i]
+  }
+  return newReverse
+}
+
+revStr = reverse("hello Yo Mamma")
+revStr2 = reverse("Hey Whats Up Hello")
 
