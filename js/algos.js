@@ -11,7 +11,7 @@
 
         // ==============  END PSEUDOCODE   ================ //
 
-        
+
 function lgPhr(array){
 	longest = ''
 	
@@ -22,3 +22,19 @@ function lgPhr(array){
 	}
 	console.log(longest)
 }
+
+
+
+          // ==============   PSEUDOCODE   ================ //
+
+// write a function that takes two objects and checks to see if the objects share at least one key-value pair. 
+// Input: Two Keys (Objects)
+//  Steps:
+// - ITERATE through both objects at the same time
+// - IF a KEY in object #1 is the same as the KEY in object #2, post a Match 
+// Output: TRUE IF there is a match, FALSE IF there is not 
+
+          // ==============  END PSEUDOCODE   ================ //
+          
+          
+          
