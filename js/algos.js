@@ -10,3 +10,15 @@
 
 
         // ==============  END PSEUDOCODE   ================ //
+
+        
+function lgPhr(array){
+	longest = ''
+	
+	for(var i = 0; i < (array.length); i++){
+	  if (array[i].length > longest.length){
+	    longest = array[i]
+	  }
+	}
+	console.log(longest)
+}
