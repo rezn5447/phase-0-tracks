@@ -35,6 +35,34 @@ function lgPhr(array){
 // Output: TRUE IF there is a match, FALSE IF there is not 
 
           // ==============  END PSEUDOCODE   ================ //
-          
-          
-          
+
+ 
+          // ================  DRIVER CODE   ================= // 
+
+
+
+                   
+var ary = ["longest phrase","longer phrase","something even longer"]
+var dif_ary = ["Some","sentences","can sometimes be longer","than others"]
+
+lgPhr(ary)
+lgPhr(dif_ary)
+
+
+
+
+
+var key1 = {name: "Steven", age: 54}
+var key2 = {name: "Tamir", age: 54}
+var key3 = {field:"Bioengeneering", name:"Randal", age:24}
+var key4 = {occupation: "Student", name:"Steven", age:24}
+
+         
+
+keyMatch(key1,key3)
+keyMatch(key1,key4)
+keyMatch(key3,key4)
+
+
+
+           // ================ END DRIVER CODE   ================= // 
