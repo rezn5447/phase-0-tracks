@@ -8,7 +8,6 @@
 // Output: Longest element in the array
 
 
-
         // ==============  END PSEUDOCODE   ================ //
 
 
@@ -36,18 +35,28 @@ function lgPhr(array){
 
           // ==============  END PSEUDOCODE   ================ //
 
+function keyMatch(k1,k2){
+	var match = 0
+for (var key in k1 && k2){
+      if (k1[key] == k2[key]) {
+	    match += 1
+	  }
+  }
+if (match > 0) {console.log(true)}
+	else {console.log(false)}
+}
+
  
           // ================  DRIVER CODE   ================= // 
 
 
 
-                   
+
 var ary = ["longest phrase","longer phrase","something even longer"]
 var dif_ary = ["Some","sentences","can sometimes be longer","than others"]
 
 lgPhr(ary)
 lgPhr(dif_ary)
-
 
 
 
@@ -58,7 +67,6 @@ var key3 = {field:"Bioengeneering", name:"Randal", age:24}
 var key4 = {occupation: "Student", name:"Steven", age:24}
 
          
-
 keyMatch(key1,key3)
 keyMatch(key1,key4)
 keyMatch(key3,key4)
@@ -66,3 +74,10 @@ keyMatch(key3,key4)
 
 
            // ================ END DRIVER CODE   ================= // 
+
+
+
+
+
+
+           
