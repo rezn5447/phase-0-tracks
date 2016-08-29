@@ -72,7 +72,8 @@
  	  }
  	  ary.push(letters)
    }
-      console.log(ary)
+   	console.log(ary)
+     return ary
  }
 
           // ================  DRIVER CODE   ================= // 
@@ -87,6 +88,8 @@ lgPhr(ary)
 lgPhr(dif_ary)
 
 
+lgPhr(rand_words(9))
+
 
 
 var key1 = {name: "Steven", age: 54}
@@ -99,13 +102,11 @@ keyMatch(key1,key3)
 keyMatch(key1,key4)
 keyMatch(key3,key4)
 
+                     // FINAL DRIVER CODE // 
+
+ for(var i = 1; i < 10; i++){
+	lgPhr(rand_words(6))
+  }
 
 
-           // ================ END DRIVER CODE   ================= // 
-
-
-
-
-
-
-           
+     // ================ END DRIVER CODE   ================= // 
