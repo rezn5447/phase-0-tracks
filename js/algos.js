@@ -11,16 +11,15 @@
         // ==============  END PSEUDOCODE   ================ //
 
 
-function lgPhr(array){
-	longest = ''
-	
+  function lgPhr(array){
+    longest = ''
 	for(var i = 0; i < (array.length); i++){
 	  if (array[i].length > longest.length){
 	    longest = array[i]
 	  }
 	}
 	console.log(longest)
-}
+  }
 
 
 
@@ -35,18 +34,47 @@ function lgPhr(array){
 
           // ==============  END PSEUDOCODE   ================ //
 
-function keyMatch(k1,k2){
-	var match = 0
-for (var key in k1 && k2){
+  function keyMatch(k1,k2){
+    var match = 0
+    for (var key in k1 && k2){
       if (k1[key] == k2[key]) {
 	    match += 1
 	  }
-  }
-if (match > 0) {console.log(true)}
+    }
+    if (match > 0) {console.log(true)}
 	else {console.log(false)}
-}
+  }
+          // ==============   PSEUDOCODE   ================ //
 
- 
+// Write a function that takes an integer for length, and builds and returns an array of the given length. This array will be populated with strings of a random length. (1 - 10)
+// Input: INT
+//  Steps:
+// - Make empty array
+// - Generate (INT) strings of random length
+//     Steps:
+//    - Make a letters VARIABLE to access letters from
+//    - Use RANDOM FUNCTION to access the letters (1 to 10) times
+//    - REPEAT this UNTIL INT number of TIMES
+//    - Push the strings into the array
+// Output: Array of INT length with (1 to 10) letters
+
+          // ==============  END PSEUDOCODE   ================ //
+
+
+  function rand_words(int){
+    var alpha = "abcdefghijklmnopqrstuvwxyz"
+    ary = []
+  for(var i = 0; i < int; i++){
+	var letters = ''
+    rand = Math.floor((Math.random() * 10) + 1)
+ 	for(var k = 0; k < rand; k++){
+ 	  letters = letters + alpha.charAt(Math.floor((Math.random() * 26) + 1))
+ 	  }
+ 	  ary.push(letters)
+   }
+      console.log(ary)
+ }
+
           // ================  DRIVER CODE   ================= // 
 
 
