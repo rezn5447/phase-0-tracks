@@ -1,0 +1,28 @@
+
+	// You've joined two tables before. How do you join three?
+
+
+sqlite> SELECT * FROM users LEFT OUTER JOIN reviews ON users.id = user_id LEFT OUTER JOIN businesses ON businesses.id = business_id;
+1|Bradford|Pitt|1|4|Got married here!|1|1|1|Grundy Hollow Wedding Chapel
+2|Mandy|Kaling|2|2|Too Loud!!!|4|2||
+3|Angela|Jolie|||||||
+4|Steven|Wonder|||||||
+
+
+
+sqlite> SELECT * FROM users LEFT OUTER JOIN reviews ON users.id = user_id LEFT OUTER JOIN businesses ON businesses.id = business_id WHERE last_name ="Pitt";
+1|Bradford|Pitt|1|4|Got married here!|1|1|1|Grundy Hollow Wedding Chapel
+sqlite> 
+
+
+	// There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+sqlite> SELECT users.first_name,users.last_name,businesses.name,reviews.stars,reviews.comment FROM FT OUTER JOIN reviews ON users.id = user_id LEFT OUTER JOIN businesses ON businesses.id = business_id WHERE last_name ="Pitt";
+Bradford|Pitt|Grundy Hollow Wedding Chapel|4|Got married here!
+sqlite> 
+
+	// How do you view the data of all three tables for just one particular business? 
+
+sqlite> SELECT * FROM businesses LEFT OUTER JOIN reviews ON users.id = user_id LEFT OUTER JOIN users ON users.id = reviews.user_id WHERE businesses.id = 1 AND businesses.name = "Grundy Hollow Wedding Chapel";
+1|Grundy Hollow Wedding Chapel|1|4|Got married here!|1|1|1|Bradford|Pitt
+1|Grundy Hollow Wedding Chapel|2|2|Too Loud!!!|4|2|2|Mandy|Kaling
