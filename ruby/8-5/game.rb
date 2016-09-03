@@ -6,14 +6,21 @@
     end
   end
 
-  def dif_chk(input)
-	until input == '10' || input == '15' || input == '20' || input == '1' || input == '2' || input =='3'
-  	  puts "Read the rules! use (1/2/3) for level and (10/15/20) for the number of problems you will complete!"
-  	  input = gets.chomp
+  def dif_chk1(num)
+	until num == "1" || num == "2" || num == "3"
+  	  puts "Read the rules! use (1 or 2 or 3) for level!"
+  	  num = gets.chomp
   	end
-    input  
+  	num
   end
 
+  def dif_chk2(num2)
+	until num2 == "10" || num2 == "15" || num2 == "20" 
+  	  puts "Read the rules! use (10 or 15 or 20) for the number of problems you will complete!"
+  	  num2 = gets.chomp
+  	end
+  	num2
+  end
 
   def correct_chk(ans,prob)
 	p prob
