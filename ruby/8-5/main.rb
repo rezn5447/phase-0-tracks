@@ -6,7 +6,6 @@ require_relative 'database'
 
 
   def user_interface(game_db)
-  	yup = ''
 	puts "Hey welcome to Resdan's Little Numbers Game, where you answer simple '+' '-' and '*' problems! The difficulty and number of problems are determined by you, and if you get all the answers right you might make it onto the leader board!"
 	puts "\n put 'q' or 'quit' or 'exit' to come back later!"
   	puts "\n To start off, what should be your player name?"
@@ -16,11 +15,10 @@ require_relative 'database'
   	puts "Here we go!: What level of difficulty? (1/2/3)"
   	input1 = gets.chomp
   	input1 = dif_chk1(input1)
-  	p yup
   	puts "How many problems? (10/15/20)"
   	input2 = gets.chomp
   	input2 = dif_chk2(input2)
-  	difficulty(input1.to_i,input2.to_i)	
+  	game_start(input1.to_i,input2.to_i)
   end
 
 

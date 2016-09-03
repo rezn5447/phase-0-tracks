@@ -10,16 +10,16 @@ $db = SQLite3::Database.new("brain_game.db")
     db_chk = $db.execute("SELECT * FROM players WHERE player_name = '#{name}'")
     if db_chk == []
       puts "Welcome new player #{name}!"
-     # $db.execute("INSERT INTO players(id,player_name,num_of_games_played")
+      $db.execute("INSERT INTO players (player_name,num_of_games_played) VALUES (?,?)", [name,0])
     else
       puts "Welcome back #{name}!"   
     end
   end
 
-
-
-
-
+  def game_complete(db,name)
+   eh =  $db.execute("SELECT num_of_games_played FROM players WHERE player_name = '#{name}'")
+    puts eh
+  end
 
 
 # fancy string delimiters

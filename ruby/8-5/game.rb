@@ -34,7 +34,7 @@
 	p $score
   end
 
-  def calculate(operant)
+  def calculation(operant)
 	num1 = rand(10)
 	num2 = rand(10)
 	if operant == '*'
@@ -52,17 +52,23 @@
 	end
   end
 
-  def difficulty(level,problems)
+  def game_start(level,problems)
   	i = 0
   	while i < problems
   	oper = (rand(level) + 1)
   	  if oper >= 3
- 	   calculate('*')
+ 	   calculation('*')
 	  elsif oper == 2
-		calculate('-')
+		calculation('-')
 	  else
-		calculate('+')
+		calculation('+')
 	  end	
 		i += 1
     end
+    game_over(problems)
+  end
+
+  def game_over(problems)
+  	puts "GAME OVER!!! You got #{$score} out of #{problems} correct!"
+  	game_complete($db,"Resdan")	
   end
