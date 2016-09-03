@@ -1,10 +1,24 @@
 # Should figure out how to make score not a global variable....
   $score = 0 
+  def quit(input)
+  	if input == 'quit' || input == 'q' || input == 'exit'
+  	  abort("Come back soon!")
+    end
+  end
+
+  def dif_chk(input)
+	until input == '10' || input == '15' || input == '20' || input == '1' || input == '2' || input =='3'
+  	  puts "Read the rules! use (1/2/3) for level and (10/15/20) for the number of problems you will complete!"
+  	  input = gets.chomp
+  	end
+    input  
+  end
 
 
- def correct_chk(ans,prob)
+  def correct_chk(ans,prob)
 	p prob
 	user_ans = gets.chomp
+	quit(user_ans)
 	if ans.to_s == user_ans
 	  $score += 1
 	else 
