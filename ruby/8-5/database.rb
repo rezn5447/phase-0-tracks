@@ -2,7 +2,7 @@
 require 'sqlite3'
 require 'faker'
 
-
+# I REALIZE THAT ITS A BIT CLUNKY BUT WITH MORE TIME I WOULD DEFINITELY HAVE REFACTORED SOME THINGS =D
 
 $db = SQLite3::Database.new("brain_game.db")
 
@@ -16,9 +16,28 @@ $db = SQLite3::Database.new("brain_game.db")
     end
   end
 
-  def game_complete(db,name)
-   eh =  $db.execute("SELECT num_of_games_played FROM players WHERE player_name = '#{name}'")
-    puts eh
+  def get_id(name)
+    player_id = $db.execute("SELECT id FROM players WHERE player_name = '#{name}'")
+    player_id
+  end
+  
+  def save_score(pl_id,lvl,probs,finish_time)
+    save = $db.execute("INSERT INTO players_scores (player_id,level,problems,finish_time) VALUES (?,?,?,?)",[pl_id,lvl,probs,finish_time])
+    save
+  end
+  
+  def update_games_played(name)
+    games_played = $db.execute("SELECT num_of_games_played FROM players WHERE player_name = '#{name}'")
+    p games_played
+   # update = games_played + 1
+   # p update
+   # $db.execute("UPDATE players SET num_of_games_played = '#{update}' WHERE player_name = '#{name}'")
+   puts "You have played #{games_played} games now! CONGRATS!!"
+  end
+
+  def game_complete(lvl,name,probs,finish_time)
+    update_games_played(name)
+    save_score(get_id(name),lvl,probs,finish_time)
   end
 
 

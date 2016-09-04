@@ -34,6 +34,8 @@
 	p $score
   end
 
+# JUST RANDOM NUMBERS GENERATED AND ADDED, SUBTRACTED, OR MULTIPLIED TOGETHER =)
+
   def calculation(operant)
 	num1 = rand(10)
 	num2 = rand(10)
@@ -52,7 +54,8 @@
 	end
   end
 
-  def game_start(level,problems)
+  def game_start(level,problems,player_name)
+    start_time = Time.now
   	i = 0
   	while i < problems
   	oper = (rand(level) + 1)
@@ -65,10 +68,15 @@
 	  end	
 		i += 1
     end
-    game_over(problems)
+    end_time = Time.now
+    finish_time = end_time - start_time
+    game_over(level,problems,player_name,finish_time.floor)
   end
 
-  def game_over(problems)
-  	puts "GAME OVER!!! You got #{$score} out of #{problems} correct!"
-  	game_complete($db,"Resdan")	
+  def game_over(lvl,problems,name,finish_time)
+  	puts "\n GAME OVER!!! \n"
+    puts "You got #{$score} out of #{problems} correct!\n"
+    puts "It took you #{finish_time} seconds to finish!\n"
+    puts "GREAT JOB #{name}"
+  	game_complete(name,lvl,problems,finish_time)	
   end
