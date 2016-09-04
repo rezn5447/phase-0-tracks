@@ -34,6 +34,41 @@
 	p $score
   end
 
+# OPTIONS TO RESET SCORES AND CHECK SCORES BY USER NAME
+  def opt_strt_chk(input)
+    until input == 'options' || input == 'start'
+      puts "\n Type 'options' to go into the options menu or 'start' to begin a new game"
+      input = gets.chomp
+    end
+      if input == 'options'
+        options
+      else
+    end
+  end
+
+  def options()
+    puts "\n Welcome to the options menu!"
+    puts "\n Here you can see all the scores, see all scores by you, and reset the scores!"
+    puts "\n put 'myscores' to see personal scores"
+    puts "\n put 'allscores' to see personal scores"
+    puts "\n put 'reset' to see reset scores"
+    puts "or 'start' to start the game"
+    opt = gets.chomp
+    quit(opt)
+    opt_strt_chk(opt)
+    until opt == 'myscores' || opt == 'allscores' || opt == 'reset'
+      puts "Invalid input, Try Again!"
+      opt = gets.chomp
+    end
+    if opt == 'myscores'
+      #my_scores
+    elsif opt == 'allscores'
+      show_all_scores
+    elsif opt == 'reset'
+      reset_scores
+    end 
+  end
+
 # JUST RANDOM NUMBERS GENERATED AND ADDED, SUBTRACTED, OR MULTIPLIED TOGETHER =)
 
   def calculation(operant)
@@ -78,5 +113,5 @@
     puts "You got #{$score} out of #{problems} correct!\n"
     puts "It took you #{finish_time} seconds to finish!\n"
     puts "GREAT JOB #{name}"
-  	game_complete(name,lvl,problems,finish_time)	
+  	game_complete(lvl,name,problems,finish_time)	
   end
