@@ -31,7 +31,6 @@
 	else 
 	  $score += 0
 	end
-	p $score
   end
 
 # OPTIONS TO RESET SCORES AND CHECK SCORES BY USER NAME
@@ -46,7 +45,7 @@
     end
   end
 
-  def options()
+  def options
     puts "\n Welcome to the options menu!"
     puts "\n Here you can see all the scores, see all scores by you, and reset the scores!"
     puts "\n put 'myscores' to see personal scores"
@@ -55,18 +54,20 @@
     puts "or 'start' to start the game"
     opt = gets.chomp
     quit(opt)
-    opt_strt_chk(opt)
-    until opt == 'myscores' || opt == 'allscores' || opt == 'reset'
+    until opt == 'myscores' || opt == 'allscores' || opt == 'reset' || opt == 'start'
       puts "Invalid input, Try Again!"
       opt = gets.chomp
     end
     if opt == 'myscores'
-      #my_scores
+      my_scores
     elsif opt == 'allscores'
       show_all_scores
     elsif opt == 'reset'
       reset_scores
+    elsif opt == 'start'
+      start_game     
     end 
+    opt_strt_chk('options')
   end
 
 # JUST RANDOM NUMBERS GENERATED AND ADDED, SUBTRACTED, OR MULTIPLIED TOGETHER =)
@@ -74,22 +75,36 @@
   def calculation(operant)
 	num1 = rand(10)
 	num2 = rand(10)
-	if operant == '*'
-	  prob = "#{num1} * #{num2}"
-	  ans = num1 * num2
-	  correct_chk(ans,prob)
-	elsif operant == '-'
-	  prob = "#{num1} - #{num2}"
-	  ans = num1 - num2
-	  correct_chk(ans,prob)
-	else operant == '+'
-	  prob = "#{num1} + #{num2}"
-	  ans = num1 + num2
-	  correct_chk(ans,prob)
-	end
+	  if operant == '*'
+	    prob = "#{num1} * #{num2}"
+	    ans = num1 * num2
+	    correct_chk(ans,prob)
+	  elsif operant == '-'
+	    prob = "#{num1} - #{num2}"
+	    ans = num1 - num2
+	    correct_chk(ans,prob)
+	  else operant == '+'
+	    prob = "#{num1} + #{num2}"
+	    ans = num1 + num2
+	    correct_chk(ans,prob)
+	  end
   end
 
-  def game_start(level,problems,player_name)
+  def start_game
+    puts "Here we go!: What level of difficulty? (1/2/3)"
+    lvl = gets.chomp
+    lvl = dif_chk1(lvl)
+    puts "How many problems? (10/15/20)"
+    probs = gets.chomp
+    probs = dif_chk2(probs)
+    p "1"
+    p "2"
+    p "3"
+    p "GO!!"
+    game_start(lvl.to_i,probs.to_i)
+  end
+
+  def game_start(level,problems)
     start_time = Time.now
   	i = 0
   	while i < problems
@@ -105,13 +120,14 @@
     end
     end_time = Time.now
     finish_time = end_time - start_time
-    game_over(level,problems,player_name,finish_time.floor)
+    game_over(level,problems,finish_time.floor)
   end
 
-  def game_over(lvl,problems,name,finish_time)
+  def game_over(lvl,problems,finish_time)
   	puts "\n GAME OVER!!! \n"
     puts "You got #{$score} out of #{problems} correct!\n"
     puts "It took you #{finish_time} seconds to finish!\n"
-    puts "GREAT JOB #{name}"
-  	game_complete(lvl,name,problems,finish_time)	
+    puts "GREAT JOB #{$name}!!"
+  	game_complete(lvl,problems,finish_time)
+    quit('q')
   end
