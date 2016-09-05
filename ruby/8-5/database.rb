@@ -6,37 +6,50 @@ require 'faker'
 
 $db = SQLite3::Database.new("brain_game.db")
   def player_chk(db,name)
-    db_chk = $db.execute("SELECT * FROM players WHERE player_name = '#{name}'")
+    db_chk = $db.execute("SELECT * FROM players WHERE player_name = '#{$name}'")
     if db_chk == []
-      puts "Welcome new player #{name}!"
-      $db.execute("INSERT INTO players (player_name,num_of_games_played) VALUES (?,?)", [name,"0"])
+      puts "Welcome new player #{$name}!"
+      $db.execute("INSERT INTO players (player_name) VALUES (?)", [name])
     else
       puts "Welcome back #{name}!"   
     end
   end
 
-  def get_id(name)
-    player_id = $db.execute("SELECT id FROM players WHERE player_name = '#{name}'")
+  def get_id
+    player_id = $db.execute("SELECT id FROM players WHERE player_name = '#{$name}'")
     player_id[0]
-    
   end
   
-  def save_score(pl_id,name,lvl,probs,finish_time)
-    save = $db.execute("INSERT INTO players_scores (player_id,name,level,problems,finish_time) VALUES (?,?,?,?,?)",[pl_id,name,lvl,probs,finish_time])
+  def save_score(pl_id,lvl,probs,finish_time)
+    save = $db.execute("INSERT INTO players_scores (player_id,name,level,problems,score,finish_time) VALUES (?,?,?,?,?,?)",[pl_id,$name,lvl,probs,$score,finish_time])
   end
   
   def show_all_scores
     all_scores = $db.execute("SELECT * FROM players_scores")
-    all_scores.each do |pid,name,lvl,probs,time|
-      puts "#{name} : level: #{lvl} # of problems: #{probs} finish time: #{time}"
+    if all_scores == []
+      puts "\n *********   Currently no scores on the database! Play a game first!   **********"
+    else
+      all_scores.each do |pid,name,lvl,probs,score,time|
+        puts"\n"
+        puts "#{name} : level: |#{lvl}| # of problems: |#{probs}| correct: |#{score}| finish time: |#{time}|"
+      end
     end
+    opt_strt_chk('options')
   end
 
   def my_scores
-    mine = $db.execute("SELECT * FROM players_scores WHERE name = '#{name}'")
-    mine.each do |pid,name,|
+    mine = $db.execute("SELECT * FROM players_scores WHERE name = '#{$name}'")
+    if mine == []
+      puts "\n *********   Currently no scores on the database! Play a game first!   **********"
+    else
+      mine.each do |pid,name,lvl,probs,score,time|
+        puts"\n"
+        puts "#{name} : level: |#{lvl}| # of problems: |#{probs}| correct:|#{score}| finish time: |#{time}|"
+      end
     end
+    opt_strt_chk('options')
   end
+
   def reset_scores
     puts " ARE YOU SURE!? ( YES / NO )"
     input = gets.chomp
@@ -47,27 +60,16 @@ $db = SQLite3::Database.new("brain_game.db")
     $db.execute("DELETE FROM players_scores")
     $db.execute('VACUUM')
     puts "\n All Scores deleted!"
-    opt_strt_chk(input)
+    opt_strt_chk('options')
     else
     p "OK! Scores still saved!"
-    opt_strt_chk(input)
+    opt_strt_chk('options')
     end
   end
 
-  def update_games_played(name)
-    games_played = $db.execute("SELECT num_of_games_played FROM players WHERE player_name = '#{name}'")
-    gp = games_played
-    p gp
-   # update = games_played + 1
-   # p update
-   # $db.execute("UPDATE players SET num_of_games_played = '#{update}' WHERE player_name = '#{name}'")
-   puts "You have played #{games_played[0]} games now! CONGRATS!!"
-  end
-
-  def game_complete(lvl,name,probs,finish_time)
-    update_games_played(name)
-    id = get_id(name)
-    save_score(id,name,lvl,probs,finish_time)
+  def game_complete(lvl,probs,finish_time)
+    id = get_id
+    save_score(id,lvl,probs,finish_time)
   end
 
 
@@ -76,8 +78,7 @@ $db = SQLite3::Database.new("brain_game.db")
 create_tbl_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS players(
   id INTEGER PRIMARY KEY,
-  player_name VARCHAR(255),
-  num_of_games_played INT
+  player_name VARCHAR(255)
   )
 SQL
 
@@ -87,6 +88,7 @@ create_tbl_cmd2 = <<-SQL
   name VARCHAR(255),
   level INT,
   problems INT,
+  score INT,
   finish_time INT
   )
 SQL

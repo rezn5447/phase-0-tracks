@@ -12,19 +12,14 @@ require_relative 'database'
 	puts "\n put 'q' or 'quit' or 'exit' to come back later!"
 
   	puts "\n To start off, what should your player name be?"
-  	name = gets.chomp
-  	quit(name)
-  	player_chk($db,name)
+  	$name = gets.chomp
+  	quit($name)
+  	player_chk($db,$name)
     puts "\n Type 'options' to go into the options menu or 'start' to begin a new game"
     input = gets.chomp
     opt_strt_chk(input)
-  	puts "Here we go!: What level of difficulty? (1/2/3)"
-  	lvl = gets.chomp
-  	lvl = dif_chk1(lvl)
-  	puts "How many problems? (10/15/20)"
-  	probs = gets.chomp
-  	probs = dif_chk2(probs)
-  	game_start(lvl.to_i,probs.to_i,name)
+  	start_game
+  	game_start(lvl.to_i,probs.to_i)
   end
 
 
