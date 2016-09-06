@@ -94,30 +94,12 @@ create_tbl_cmd2 = <<-SQL
 SQL
 
 
-# create_tbl_cmd3 = <<-SQL
-#   CREATE TABLE IF NOT EXISTS high_scores(
-#   player_id,
-#   name INT,
-#   level INT,
-#   problems INT,
-#   finish_time INT
-#   )
-# SQL
-
-
-
 
 $db.execute(create_tbl_cmd)
 $db.execute(create_tbl_cmd2)
 
 
 
-
-
-
-# need to start making tables and adding values to themmmm
-
-## ALMOST DONE WITH SILLY PROJECT ## 
 
 
  
