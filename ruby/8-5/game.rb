@@ -1,4 +1,4 @@
-# Should figure out how to make score not a global variable....
+
   $score = 0 
   def quit(input)
   	if input == 'quit' || input == 'q' || input == 'exit'
