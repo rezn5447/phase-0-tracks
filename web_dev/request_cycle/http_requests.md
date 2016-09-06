@@ -1,4 +1,5 @@
 What are some common HTTP status codes?
+
   The two that I am most familar with are 404 and 200
   404 is request not found, it seems that you can still put up some sort of a page when that error occurs
   200 is success and that means the page or request was loaded correctly
@@ -6,6 +7,7 @@ What are some common HTTP status codes?
   and 502 bad gateway which I think I have seen before when the page does not load correctly 
   
 What is the difference between a GET request and a POST request? When might each be used?
+
   A GET request requests data from a specified source while a POST request requests data to be processed from a specified source. 
   I think the difference here is that a server might do specific processing of sensitive data while a GET request will ask for the
   next page after that data is processed.
