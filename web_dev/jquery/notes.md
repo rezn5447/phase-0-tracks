@@ -19,3 +19,9 @@ Youtube
 Stack overflow 
 
 Watching videos at 1.25 speed
+
+
+## AFTER TWO HOURS ##
+
+
+I found a comprhensive YouTube video that was about 1hr and 15 min and I watched it at 1.5 speed picking up the id calls and how to add and animate DOM elements it was super helpful I even downloaded the entire video for future reference I only spent a few minutes creating a html page but with that video in the future I could easily get addition jQuery elements to work with ease.
