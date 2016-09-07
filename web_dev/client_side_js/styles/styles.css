@@ -1,0 +1,109 @@
+body{
+	background: #6f3909;
+}
+p {
+	font-size: 1em;
+	font-family: Arial;
+}
+
+fieldset{
+	width: 50%;
+	height: 300px;
+	text-align: center;
+	margin: 0 auto;
+	background-image: url('../images/Background1.jpg');
+	background-position: center;
+
+}
+textarea{
+	width: 200px;
+	height: 100px;
+
+	display: inline-block;
+	vertical-align: center;
+	width: 25%;
+	padding: 10px;
+	margin: auto;
+	float: left;
+
+}
+#bodydiv{
+	vertical-align: center;
+
+
+}
+#banner{
+	letter-spacing: 3px;
+	border: dashed 5px;
+	text-align: center;
+	margin: auto 0;
+	margin-left: 200px;
+	display: inline-block;
+	width: 50%;
+	vertical-align: center;
+
+}
+
+#headerimg{
+
+	width: 90%;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+	padding-left: 30px;
+}
+
+.centerimg{
+	vertical-align: center;
+	display: block;
+
+	margin:0 auto;
+}
+
+.centertext{
+	text-align: center;
+	vertical-align: center;
+	display: inline-block;
+	margin:0 auto;
+	margin-left:100px;
+}
+
+a:hover{
+	color: green;
+
+}
+
+a:visited{
+
+	color:green;
+}
+
+@media screen and (max-width: 550px){
+	#banner{
+		width: 40%;
+		margin-left: 150px;
+		background: green;
+		border: solid 3px;
+
+
+	}
+	fieldset{
+        width: 100%;
+
+	}
+
+
+
+#formdiv{
+	display: block;
+	width: 500px;
+	float: left;
+}
+
+link:visited{
+color: green;
+
+
+}
+
+
