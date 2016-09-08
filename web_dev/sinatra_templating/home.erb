@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Management System</title>
+</head>
+<body>
+	<h1>Student Management System</h1>
+	<p>Welcome to the student management system.</p>
+	<ul>
+		<% @students.each do |student| %>
+
+			<li><%= student['name'] %>, <%= student['age'] %>
+			</li>
+		<% end %>
+
+	</ul>
+
+</body>
+</html>
