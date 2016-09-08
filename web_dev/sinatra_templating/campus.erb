@@ -5,6 +5,14 @@
 </head>
 <body>
 <h1>These are the Campuses that are Available</h1>
+	<ul>
+		<% @campuses.each do |campus| %>
+
+			<li><%= campus['name']%>
+			</li>
+		<% end %>
+
+	</ul>
 
 </body>
 </html>
